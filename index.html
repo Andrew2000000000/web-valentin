@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>San Valentín 💘</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ===== CUADROS ===== */
+.section {
+    display: none;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.active {
+    display: flex;
+}
+
+/* ===== TARJETA ===== */
+.card {
+    background: rgba(0,0,0,0.55);
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 600px;
+    box-shadow: 0 0 30px rgba(255,0,100,0.8);
+}
+
+/* ===== TEXTO ===== */
+h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* ===== BOTONES ===== */
+button {
+    padding: 14px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: #adb5bd;
+}
+
+/* ===== GALERÍA ===== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<!-- CUADRO 1 -->
+<div class="section active" id="step1" style="background-image: url('fotos/fondo1.jpg')">
+    <div class="card">
+        <h1>💖 ¿Quieres ser mi San Valentín? 💖</h1>
+        <button class="yes" onclick="irASi()">Sí 💕</button>
+        <button class="no" onclick="irANo()">No 😢</button>
+    </div>
+</div>
+
+<!-- CUADRO 2 -->
+<div class="section" id="step2" style="background-image: url('fotos/fondo2.jpg')">
+    <div class="card">
+        <h1>🫶🏻 Oye… espera</h1>
+        <p>
+            No puedes decir que no tan fácil 💕<br>
+            Piénsalo otra vez…<br>
+            Te prometo hacerte reír, cuidarte y amarte 🥰
+        </p>
+        <button class="yes" onclick="irASi()">Está bien… sí 💖</button>
+    </div>
+</div>
+
+<!-- CUADRO 3 -->
+<div class="section" id="step3" style="background-image: url('fotos/fondo3.jpg')">
+    <div class="card">
+        <h1>💘 Gracias por decir que sí 💘</h1>
+        <p>
+            <!--AQUÍ ESCRIBES TU PÁRRAFO ROMÁNTICO-->
+            Desde que llegaste a mi vida todo es más bonito.  
+            Gracias por existir, por tu sonrisa y por cada momento juntos.
+            Este San Valentín y todos los que vengan quiero vivirlos contigo ❤️
+        </p>
+
+        <!-- GALERÍA DE FOTOS -->
+        <div class="gallery">
+            <img src="fotos/foto1.jpg">
+            <img src="fotos/foto2.jpg">
+            <img src="fotos/foto3.jpg">
+        </div>
+    </div>
+</div>
+
+<script>
+function irANo() {
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.add("active");
+}
+
+function irASi() {
+    document.getElementById("step1").classList.remove("active");
+    document.getElementById("step2").classList.remove("active");
+    document.getElementById("step3").classList.add("active");
+}
+</script>
+
+</body>
+</html>
