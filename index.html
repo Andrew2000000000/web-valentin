@@ -82,7 +82,9 @@ button {
 </head>
 
 <body>
-
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
 <!-- CUADRO 1 -->
 <div class="section active" id="step1" style="background-image: url('fotos/fondo1.jpg')">
     <div class="card">
@@ -126,12 +128,20 @@ button {
 </div>
 
 <script>
+function reproducirMusica() {
+    const musica = document.getElementById("musica");
+    musica.volume = 0.5;
+    musica.play().catch(() => {});
+}
+
 function irANo() {
+    reproducirMusica();
     document.getElementById("step1").classList.remove("active");
     document.getElementById("step2").classList.add("active");
 }
 
 function irASi() {
+    reproducirMusica();
     document.getElementById("step1").classList.remove("active");
     document.getElementById("step2").classList.remove("active");
     document.getElementById("step3").classList.add("active");
